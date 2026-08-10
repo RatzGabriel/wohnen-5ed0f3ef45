@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Korridorsuche Kirchschlag – Stammersdorf</title>
+<style>
+:root{
+  --paper:#f4f5f1; --card:#fff; --ink:#161a15; --ink-2:#4a5148; --ink-3:#7d857a;
+  --line:#dcded6; --line-2:#e9eae4; --accent:#9a5b28; --accent-soft:#f0e3d6;
+  --shadow:0 1px 2px rgba(22,26,21,.05),0 6px 20px -12px rgba(22,26,21,.22);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:ui-sans-serif,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --paper:#12140f; --card:#1a1d17; --ink:#eceee6; --ink-2:#b0b6a9;
+    --ink-3:#808878; --line:#2c3027; --line-2:#23261f; --accent:#d2925c; --accent-soft:#33261a;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -14px rgba(0,0,0,.8); }
+}
+:root[data-theme="dark"]{ --paper:#12140f; --card:#1a1d17; --ink:#eceee6; --ink-2:#b0b6a9;
+  --ink-3:#808878; --line:#2c3027; --line-2:#23261f; --accent:#d2925c; --accent-soft:#33261a;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -14px rgba(0,0,0,.8); }
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{background:var(--card);border-bottom:1px solid var(--line)}
+.head{padding:40px 0 30px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(27px,4.4vw,42px);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent)}
+.sub{margin:14px 0 0;color:var(--ink-2);max-width:66ch}
+.stamp{margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+main{padding:0 0 70px}
+section{margin-top:44px}
+h2{font-family:var(--serif);font-weight:400;font-size:25px;margin:0 0 4px;padding-bottom:10px;border-bottom:2px solid var(--accent)}
+h2 .tagline{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:6px}
+.lead{color:var(--ink-2);margin:16px 0 20px;max-width:72ch}
+p{max-width:74ch}
+code{font-family:var(--mono);font-size:.9em;background:var(--line-2);padding:1px 5px;border-radius:3px}
+.kennzahlen{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:8px;overflow:hidden;margin:18px 0}
+.kz{background:var(--card);padding:10px 13px}
+.kz dt{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);font-family:var(--mono)}
+.kz dd{margin:3px 0 0;font-family:var(--mono);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+/* --- Filterleiste --- */
+.werkzeug{position:sticky;top:0;z-index:5;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:14px 16px;margin-top:18px}
+.wz-kopf{display:flex;align-items:center;gap:12px}
+.wz-auf{display:none;font:inherit;font-size:14px;font-weight:600;gap:8px;align-items:center;padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
+.wz-auf .pfeil{transition:transform .15s ease}
+.werkzeug.offen .wz-auf .pfeil{transform:rotate(180deg)}
+.reihe{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.grp{display:flex;flex-direction:column;gap:5px}
+.grp label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.grp input,.grp select{font:inherit;font-size:16px;padding:9px 11px;min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);min-width:0}
+.grp input[type=number]{width:120px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+#q{width:min(280px,72vw)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:inherit;font-size:14px;padding:9px 14px;min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink-2);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+:root:not([data-theme="light"]) .chip[aria-pressed=true]{color:#17190f}
+:root[data-theme="dark"] .chip[aria-pressed=true]{color:#17190f}
+.zaehler{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.zaehler b{color:var(--accent);font-size:17px}
+.leer{padding:40px 0;color:var(--ink-3);text-align:center}
+/* --- Kartenraster --- */
+.karten{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:22px}
+.karte{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:box-shadow .15s ease,transform .15s ease}
+.karte:hover{box-shadow:0 2px 4px rgba(22,26,21,.06),0 14px 34px -16px rgba(22,26,21,.3);transform:translateY(-2px)}
+.karte:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.k-bild{position:relative;aspect-ratio:3/2;background:var(--line-2)}
+.k-bild img{width:100%;height:100%;object-fit:cover;display:block}
+.k-ohne{display:flex;align-items:center;justify-content:center;height:100%;color:var(--ink-3);font-family:var(--mono);font-size:12px}
+.k-zeit,.k-art,.k-anz{position:absolute;font-family:var(--mono);font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;background:rgba(10,12,8,.72);color:#fff}
+.k-zeit{left:10px;bottom:10px}
+.k-art{right:10px;bottom:10px;background:rgba(154,91,40,.92)}
+.k-anz{right:10px;top:10px}
+.k-koerper{padding:15px 17px 17px;display:flex;flex-direction:column;gap:7px;flex:1}
+.k-preis{font-family:var(--mono);font-size:19px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.k-preis small{font-size:12px;font-weight:600;color:var(--ink-3)}
+.k-fakten{display:flex;flex-wrap:wrap;gap:6px}
+.k-fakten span{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);background:var(--line-2);padding:3px 8px;border-radius:4px;white-space:nowrap}
+.k-titel{font-size:15.5px;font-weight:600;line-height:1.35;margin:2px 0 0;flex:1}
+.k-titel a{text-decoration:none}
+.k-titel a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.k-ort{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0}
+.mehr{display:block;width:100%;margin-top:26px;padding:15px;min-height:48px;font:inherit;font-size:15px;font-weight:600;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--shadow)}
+.mehr:hover{border-color:var(--accent);color:var(--accent)}
+/* --- Detailfenster --- */
+.modal[hidden]{display:none}
+.modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-hg{position:absolute;inset:0;background:rgba(10,12,8,.66)}
+.modal-box{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;max-width:800px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 24px 60px -20px rgba(0,0,0,.55);-webkit-overflow-scrolling:touch}
+.modal-zu{position:sticky;float:right;top:10px;margin:10px 12px 0 0;z-index:2;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:9px;width:44px;height:44px;font-size:24px;line-height:1;cursor:pointer}
+.modal-inhalt{padding:22px 26px 30px}
+.m-kopf{font-family:var(--serif);font-size:clamp(21px,4.6vw,26px);font-weight:400;margin:0 52px 6px 0;line-height:1.2}
+.m-adr{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);margin:0 0 16px}
+.m-galerie{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-bottom:18px}
+.m-galerie img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:9px;display:block;background:var(--line-2)}
+.m-galerie img:first-child:nth-last-child(n+2){grid-column:1/-1;aspect-ratio:16/9}
+.m-zahlen{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:9px;overflow:hidden;margin:0 0 18px}
+.m-zahlen div{background:var(--card);padding:9px 12px}
+.m-zahlen dt{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.m-zahlen dd{margin:2px 0 0;font-family:var(--mono);font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.m-text{font-size:15px;line-height:1.65;color:var(--ink-2);white-space:pre-wrap;margin:0 0 20px;overflow-wrap:break-word}
+.m-fuss{display:flex;gap:10px;flex-wrap:wrap}
+.m-fuss a{font-size:15px;font-weight:600;text-decoration:none;padding:12px 18px;min-height:48px;display:flex;align-items:center;border-radius:9px;border:1px solid var(--line);color:var(--ink)}
+.m-fuss a.stark{background:var(--accent);border-color:var(--accent);color:#fff}
+:root:not([data-theme="light"]) .m-fuss a.stark{color:#17190f}
+:root[data-theme="dark"] .m-fuss a.stark{color:#17190f}
+footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 0 46px;font-size:13px;color:var(--ink-3)}
+footer p{margin:0 0 8px;max-width:80ch}
+/* --- Telefon --- */
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .werkzeug{padding:12px 14px}
+  .wz-auf{display:flex}
+  .reihe{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--line-2);gap:16px}
+  .werkzeug.offen .reihe{display:flex}
+  .grp{width:100%}
+  .grp input,.grp select,#q,.grp input[type=number]{width:100%}
+  .karten{grid-template-columns:1fr;gap:16px;margin-top:18px}
+  .k-bild{aspect-ratio:16/10}
+  h2{font-size:22px}
+  .modal{padding:0}
+  .modal-box{max-height:100dvh;height:100dvh;border-radius:0;border:0}
+  .modal-inhalt{padding:16px 16px 30px}
+  .m-galerie{grid-template-columns:1fr}
+  .m-fuss a{flex:1;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.karte{transition:none}.karte:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <p class="eyebrow">willhaben · Schnittmenge zweier Fahrzeitgebiete</p>
+    <h1>Alles, was <em>zwischen</em> Kirchschlag und Stammersdorf liegt</h1>
+    <p class="sub">Jedes Objekt, das beide Orte in höchstens einer Autostunde erreicht, bis 400.000 € Kaufpreis und 1.600 € Monatsmiete. Ein Tipp auf eine Karte öffnet Bilder, Kennzahlen und die vollständige Beschreibung.</p>
+    <p class="stamp">Stand 22.08.2026, 08:15 · 8 Objekte aus 5 Postleitzahlen · 8 zum Kauf, 0 zur Miete</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section style="margin-top:24px">
+  <div class="werkzeug" id="werkzeug">
+    <div class="wz-kopf">
+      <button class="wz-auf" id="wz-auf" aria-expanded="false" aria-controls="wz-reihe">
+        Filter <span class="pfeil">▾</span>
+      </button>
+      <div class="zaehler" id="zaehler"></div>
+    </div>
+    <div class="reihe" id="wz-reihe">
+      <div class="grp">
+        <label for="q">Suchbegriff</label>
+        <input type="text" id="q" placeholder="Garten, Pool, Erstbezug, Ort …" autocomplete="off">
+      </div>
+      <div class="grp">
+        <label>Angebot</label>
+        <div class="chips" id="f-mode">
+          <button class="chip" data-v="alle" aria-pressed="true">Alle</button>
+          <button class="chip" data-v="kauf" aria-pressed="false">Kauf</button>
+          <button class="chip" data-v="miete" aria-pressed="false">Miete</button>
+        </div>
+      </div>
+      <div class="grp">
+        <label>Zimmer ab</label>
+        <div class="chips" id="f-rooms">
+          <button class="chip" data-v="0" aria-pressed="true">4+</button>
+          <button class="chip" data-v="5" aria-pressed="false">5+</button>
+          <button class="chip" data-v="6" aria-pressed="false">6+</button>
+        </div>
+      </div>
+      <div class="grp">
+        <label for="pmin">Preis von</label>
+        <input type="number" id="pmin" placeholder="0" step="10000" min="0">
+      </div>
+      <div class="grp">
+        <label for="pmax">Preis bis</label>
+        <input type="number" id="pmax" placeholder="egal" step="10000" min="0">
+      </div>
+      <div class="grp">
+        <label for="tmax">Fahrzeit bis</label>
+        <select id="tmax">
+          <option value="99">egal</option>
+          <option value="52">52 Min</option>
+          <option value="53">53 Min</option>
+          <option value="54">54 Min</option>
+          <option value="56">56 Min</option>
+          <option value="58">58 Min</option>
+        </select>
+      </div>
+      <div class="grp">
+        <label for="sort">Sortierung</label>
+        <select id="sort">
+          <option value="n">Zuletzt aktualisiert</option>
+          <option value="m">Fahrzeit</option>
+          <option value="p">Preis aufsteigend</option>
+          <option value="pd">Preis absteigend</option>
+          <option value="f">Fläche absteigend</option>
+          <option value="ppm">€ pro m²</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="karten" id="liste"></div>
+  <button class="mehr" id="mehr" hidden></button>
+  <p class="leer" id="leer" hidden>Keine Objekte mit diesen Kriterien. Filter weiter öffnen.</p>
+</section>
+
+<section>
+  <h2><span class="tagline">Einordnung</span>Wie der Korridor beschaffen ist</h2>
+  <p class="lead">Kirchschlag und Stammersdorf liegen mit dem Auto 98 Minuten auseinander. Zwei 50-Minuten-Gebiete berühren sich damit gerade eben – deshalb 60 Minuten je Seite. Die geometrisch beste erreichbare Fahrzeit liegt bei <strong>55 Minuten</strong>; besser kann kein Objekt liegen, egal wie die Grenze gesetzt wird. Der Schwerpunkt des Bandes liegt zwischen Ebenfurth, Wiener Neustadt und Baden, mit einem westlichen Arm über Kottingbrunn und Leobersdorf.</p>
+  <div class="kennzahlen">
+    <div class="kz"><dt>Objekte gesamt</dt><dd>8</dd></div>
+    <div class="kz"><dt>davon Kauf</dt><dd>8</dd></div>
+    <div class="kz"><dt>davon Miete</dt><dd>0</dd></div>
+    <div class="kz"><dt>Median Kauf</dt><dd>389k €</dd></div>
+    <div class="kz"><dt>Median Miete</dt><dd>0 €</dd></div>
+    <div class="kz"><dt>beste Fahrzeit</dt><dd>55 min</dd></div>
+    <div class="kz"><dt>Median Fahrzeit</dt><dd>57 min</dd></div>
+    <div class="kz"><dt>Postleitzahlen</dt><dd>5</dd></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Stand 22.08.2026, 08:15.</b> Ausgewertet wurden auf willhaben Eigentumswohnungen, Mietwohnungen sowie Häuser zum Kauf und zur Miete in den Bezirken Baden, Wiener Neustadt Stadt und Land, Mödling, Neunkirchen, Bruck an der Leitha sowie Eisenstadt-Umgebung und Mattersburg – vollständig durchpaginiert. Übrig bleibt, was beide Fahrzeitgrenzen von je 60 Autominuten und die Preisgrenzen hält. Gemeindewohnungen sind ausgeschlossen. Die Seite wird täglich um 08:00 neu erzeugt.</p>
+    <p><b>Grenzen:</b> Fahrzeiten sind echte Routen über das Straßennetz, aber ohne Verkehrsmodell gerechnet – im Frühverkehr Richtung Wien liegen die realen Werte höher. Sie gelten ab der Inseratskoordinate, die willhaben bei manchen Objekten nur auf Ortsebene angibt. Die Zimmerzahl stammt aus dem Inserat; 0 Inserate geben keine an und erscheinen ohne Angabe. Objekte ohne Preis bleiben in der Liste und werden von den Preisfeldern nicht weggefiltert. Beschreibungen sind auf 7.000 Zeichen gekürzt. Die 8 Bilder liegen bei willhaben und werden erst beim Ansehen geladen – ohne Verbindung bleiben die Flächen leer.</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-hg" data-schliessen></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="m-titel">
+    <button class="modal-zu" data-schliessen aria-label="Schließen">&times;</button>
+    <div class="modal-inhalt" id="m-inhalt"></div>
+  </div>
+</div>
+
+<script>
+const DATA = [{"h":"Wohnen am See - ganzjähriges Wohnen - schönes Einfamilienhaus in absoluter Ruhelage!","u":"https://www.immobilienscout24.at/expose/66f526a73329da6f9cc1eb95","p":389000,"pt":"389.000 €","m":55,"z":"2485","o":"Wimpassing a. d. Leitha","a":"","g":"MAXXX Real Estate Group","k":1,"r":4,"f":92.0,"ppm":"","ty":"HOUSE","fr":[],"frm":"","bi":["https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.0012000001E84dm-1727344258-6fa47d26a72949a2871d31b0b4fcb4dc"],"t":"Wohnen am See - ganzjähriges Wohnen - schönes Einfamilienhaus in absoluter Ruhelage! Die Immobilie befindet sich in der schönen Ortschaft, Wimpassing an der Leitha. Dieses wunderschöne Einfamilienhaus hat eine durchdachte Raumaufteilung mit einer Wohnfläche von ca. 92 m² und ein Grundstück mit einer Fläche von ca. 300 m² und befindet sich in einer ruhigen privaten Siedlung in erster Reihe zum See. Der See darf ausschließlich von Bewohnern der Seesiedlung genutzt werden. Der offene Wohn- und Essbereich ist großzügig und lichtdurchflutet. Vom Wohnzimmer aus gelangt man auf die schöne großzügige Terrasse mit direktem Blick auf den See. Das Gäste-WC, der Abstellraum und ein Büro sind auch im Erdgeschoß untergebracht. Im Obergeschoß befinden sich 2 Schlafzimmer und ein Badezimmer mit Badewanne. Im Keller ist ein gemütliches Kellerstüberl mit Bar und eine Sauna vorhanden. Der Heizraum, der Waschraum und die Abstellräume sind auch im Keller untergebracht. Die Nassräume und der Vorraum sind verfliest, die restlichen Zimmer sind mit hochwertigen Böden ausgestattet. Beheizt wird das Haus im Erdgeschoß und im Badezimmer (Obergeschoß) mit Fußbodenheizung (Strom). Im Wohnzimmer befindet sich ein Kachelofen, mit dem das Haus zusätzlich beheizt werden kann. Im Keller befinden sich Radiatoren (Strom). Die nächste Einkaufsmöglichkeit ist ca. 800 m entfernt. Kindergarten und Volksschule befinden sich in unmittelbarer Nähe und sind zu Fuß erreichbar Wimpassing an der Leitha erreicht man über die B16. Die nächsten Autobahn Auf- bzw. Abfahrten (A3 Richtung Wien oder Eisenstadt) findet man in Pottendorf, Ebreichsdorf-West oder auch Hornstein. Das Einfamilienhaus befindet sich auf einem Pachtgrundstück. Der bestehende Pachtvertrag erstreckt sich bis zum Jahr 2031, wobei der derzeitige jährliche Pachtzins bei € 2280,- liegt. Kaufpreis: € 389.000,- Weitere Immobilienangebote finden Sie unter www.maxxx.at Überzeugen Sie sich selbst von diesem einzigartigen Angebot und vereinbaren Sie noch heute einen Besichtigungstermin! Der Vermittler ist als Doppelmakler tätig. Infrastruktur / Entfernungen Gesundheit Arzt &lt;3.500m Apotheke &lt;3.500m Klinik &lt;4.000m Krankenhaus &lt;9.500m Kinder &amp; Schulen Schule &lt;1.000m Kindergarten &lt;3.000m Universität &lt;9.500m Nahversorgung Supermarkt &lt;1.000m Bäckerei &lt;3.500m Sonstige Bank &lt;3.500m Geldautomat &lt;3.500m Post &lt;3.500m Polizei &lt;3.500m Verkehr Bus &lt;500m Autobahnanschluss &lt;3.500m Bahnhof &lt;2.500m Angaben Entfernung Luftlinie / Quelle: OpenStreetMap","la":47.92026536,"lo":16.42000363,"pb":0},{"h":"EXKLUSIVES SEEHAUS AM NEUFELDER SEE – MODERNES WOHNEN MIT PRIVATEM WASSERZUGANG","u":"https://www.immobilienscout24.at/expose/6a5f562cea61a7e6c5f6a5d3","p":299000,"pt":"299.000 €","m":56,"z":"2491","o":"Neufeld an der Leitha","a":"","g":"RE/MAX P&I in Neusiedl am See","k":1,"r":6,"f":115.0,"ppm":"","ty":"HOUSE","fr":[],"frm":"","bi":["https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.0012000001E83lJ-1779204143-671d5638c2204e769a523c56c703fafd"],"t":"EXKLUSIVES SEEHAUS AM NEUFELDER SEE – MODERNES WOHNEN MIT PRIVATEM WASSERZUGANG Wohnen wie im Urlaub – nur rund 35 Minuten von Wien entfernt Dieses außergewöhnliche, ganzjährig nutzbare Seehaus am beliebten Neufelder See verbindet modernen Wohnkomfort mit einem einzigartigen Freizeit- und Naturerlebnis. In ruhiger Sackgassenlage gelegen und mit privatem Zugang zu einem exklusiven Uferbereich bietet die Immobilie eine seltene Kombination aus Erholung, Privatsphäre und hochwertiger Ausstattung. Das moderne Einfamilienhaus wurde 2010 errichtet und befindet sich auf einem großzügigen, gepflegten Pachtgrundstück mit ca. 960 m² Fläche. Mit rund 115 m² Wohnfläche, lichtdurchfluteten Räumen und einem liebevoll angelegten Garten eignet sich das Haus sowohl als stilvoller Hauptwohnsitz als auch als exklusiver Wochenend- oder Zweitwohnsitz. Highlights der Immobilie: • Privater Zugang zu einem nicht öffentlichen Uferbereich des Neufelder Sees • Ruhige Sackgassenlage mit hoher Privatsphäre • Großzügiger Garten mit Sonnenterrasse • Hochwertiger Wintergarten für ganzjähriges Wohnen • Moderne Einbauküche und offene Wohnatmosphäre • Sauna für private Wellnessmomente • Photovoltaikanlage für nachhaltige Energieversorgung • Klimaanlage, Alarmanlage und hochwertige Ausstattung • Ganzjährig bewohnbar • Nur ca. 35 Minuten von Wien entfernt Das Haus überzeugt durch seine moderne Architektur, die hochwertige Bauqualität und das besondere Lebensgefühl, das nur wenige Immobilien in dieser Form bieten können. Ob entspannte Sommertage am Wasser, Homeoffice im Grünen oder gemütliche Abende im Wintergarten – hier genießen Sie Lebensqualität auf höchstem Niveau. Das Haus befindet sich auf einem 960 m² Mietgrundstück, die jährliche Miete von 2026 bis 2036 beträgt für den neuen Eigentümer € 11.538,-- / Jahr (wertgesichert nach dem VPI 2020). Auch die zweiten 10 Jahre sind per Vomietrecht gesichert, hier beträgt die Miethöhe für 2036-2046 € 12.692,- / Jahr. Besonders attraktiv: Durch die Superädifikat-/Mietgrund-Konstruktion eröffnet sich die seltene Möglichkeit, ein hochwertiges Seehaus mit deutlich geringerem Kapitalbedarf als vergleichbare Immobilien auf Eigengrund zu erwerben. Die Kombination aus moderner Ausstattung, naturnaher Lage und exklusivem Seezugang macht dieses Objekt zu einer echten Besonderheit am Neufelder See. INFORMATIONEN ZUR STADTGEMEINDE Neufeld ist eine Stadt mit 3486 Einwohnern im Bezirk Eisenstadt - Umgebung. Wunderschön gelegen in der immer beliebter werdenden Region südlich von Wien, nur wenige Autominuten von Eisenstadt und Wiener Neustadt entfernt. Neufeld verfügt über eine hervorragende Infrastruktur, z.B. einen Bahnhof mit Direktverbindung nach Wien, Volks- und Mittelschule, mehrere Restaurants, moderner Spar, Bank, Post, Ärzte, Apotheke oder auch eine Cocktailbar und Eisdielen. Das Highlight ist aber sicherlich der beliebte Neufelder Badesee in Gehweite - hier werden Träume wahr. ENTFERNUNGEN • Neufelder See ca. 0,3 km • Nahversorger ca. 2,5 km • Bahnhof ca. 2,5 km • Autobahnauffahrt A3 ca. 3 km • Family Park ca. 25 km • Neusiedler See ca. 29 km • Eisenstadt ca. 12 km • SCS/Wiener Stadtgrenze ca. 35 km RECHTLICHES Die Angaben zum Objekt basieren auf uns zur Verfügung gestellten Informationen. Eine Haftung unsererseits ist hierfür ausgeschlossen. Detailfragen werden im Zuge von Besichtigungen besprochen, geklärt oder nachgereicht. Wir ersuchen um Verständnis, dass wir nur schriftliche Anfragen mit vollständigem Namen, aktueller Meldeadresse (Hauptwohnsitz), Telefonnummer und Email-Adresse bearbeiten können, da wir dem Eigentümer gegenüber dazu verpflichtet sind. Selbstverständlich werden Ihre Daten vertraulich behandelt. Wir weisen auf Ihre 14-tägige Rücktrittsfrist (gemäß § 11 FAGG) hin. Vor Ablauf der 14-tägigen Rücktrittsfrist werden wir gerne für Sie tätig, wenn Sie gesetzeskonform (FAGG) uns ausdrücklich (am einfachsten per E-Mail) dazu auffordern. Wenn kein angenommenes Kaufanbot zustande kommt, bleibt unsere Tätigkeit für Sie vollkommen kostenlos. Wir freuen uns auf Ihre Anfrage und stehen gerne für weitere Informationen oder einen persönlichen Besichtigungstermin zur Verfügung. Der Vermittler ist als Doppelmakler tätig. Infrastruktur / Entfernungen Gesundheit Arzt &lt;5.000m Apotheke &lt;500m Klinik &lt;500m Krankenhaus &lt;6.500m Kinder &amp; Schulen Schule &lt;500m Kindergarten &lt;500m Universität &lt;6.500m Höhere Schule &lt;8.000m Nahversorgung Supermarkt &lt;1.500m Bäckerei &lt;500m Einkaufszentrum &lt;8.500m Sonstige Bank &lt;500m Geldautomat &lt;500m Post &lt;5.000m Polizei &lt;1.500m Verkehr Bus &lt;500m Autobahnanschluss &lt;2.500m Bahnhof &lt;5.000m Angaben Entfernung Luftlinie / Quelle: OpenStreetMap","la":47.88128451,"lo":16.44649348,"pb":0},{"h":"Zweifamilienhaus / Gewerbeobjekt mit Nebengebäude zu verkaufen!","u":"https://www.immobilienscout24.at/expose/6a3b77ae7a841610eaa13002","p":390000,"pt":"390.000 €","m":56,"z":"","o":"Rechte Hauptzeile 18, 7053 Hornstein","a":"","g":"Realbrokers Immobilien Dienstleisungs GmbH & Co KG","k":1,"r":6,"f":230.0,"ppm":"","ty":"HOUSE","fr":[],"frm":"","bi":["https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.0012000001E84dv-1782287617-36785d1f041245e2af7973294d91ed5b"],"t":"Zweifamilienhaus / Gewerbeobjekt mit Nebengebäude zu verkaufen! Nähe Neufeld - Pottendorf Zum Verkauf gelangt dieses Zweifamilienhaus / Gewerbeobjekt in 7053 Hornstein, Rechte Hauptzeile 18. Das Gebäude wurde in den 60er Jahren umgebaut + erweitert. In den letzten Jahren wurde das Dach - erneuert sowie eine Photovoltaikanlage installiert. Beheizung: Ölheizungsanlage. Die Liegenschaft teilt sich wie folgt auf: Außenbereich • Hofeinfahrt • Stellplätze für Fahrzeuge • Nebengebäude = ehemalige Fleischerei mit Stallungen • Gartenfläche - Gebäude Erdgeschoß ca.115m2 • Geschäftslokal / Umbaumöglichkeit Zimmer oder Küche • 3 Zimmer • Nebenraum • Stiegenaufgang - Haus Obergeschoß ca.115m2 • 3 Zimmer • Badezimmer mit WC • Terrasse • Rohdachboden mit Ausbaumöglichkeit • Keller Vereinbaren Sie Ihre persönliche Besichtigung. Ihre Immobilienträume. Unser Ziel! www.realbrokers.at Infrastruktur / Entfernungen Gesundheit Arzt &lt;4.875m Apotheke &lt;400m Klinik &lt;50m Krankenhaus &lt;6.400m Kinder &amp; Schulen Schule &lt;450m Kindergarten &lt;475m Universität &lt;6.200m Höhere Schule &lt;7.900m Nahversorgung Supermarkt &lt;1.125m Bäckerei &lt;500m Einkaufszentrum &lt;8.050m Sonstige Bank &lt;50m Geldautomat &lt;50m Post &lt;4.875m Polizei &lt;1.075m Verkehr Bus &lt;100m Autobahnanschluss &lt;2.125m Bahnhof &lt;4.575m Angaben Entfernung Luftlinie / Quelle: OpenStreetMap","la":47.8799993,"lo":16.4440522,"pb":0},{"h":"Sommer am See - Wohnen am Wasser - Ferienhaus mit Garten","u":"https://www.immobilienscout24.at/expose/6a2860b05e963a49407699b7","p":100000,"pt":"100.000 €","m":57,"z":"2491","o":"Neufeld an der Leitha","a":"","g":"HABERKORN Immobilien GmbH","k":1,"r":5,"f":119.75,"ppm":"","ty":"HOUSE","fr":[],"frm":"","bi":["https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.0015I00000Zv4IB-1780938567-5f1a1cd401af44c68684e908a2461243"],"t":"Sommer am See - Wohnen am Wasser - Ferienhaus mit Garten Neufelder See Urlaubsfeeling pur am Neufelder See. In bester Lage mit einem Autobahnanschluss (Abfahrt Hornstein von der A3) oder mit der Bahn (Bahnhof in Neufeld a. d. Leitha) und mit dem Bus (Busstation 'Strandbad' Wiener Neustädter Stadtwerke) schnell und bequem auch aus der Bundeshauptstadt Wien zu erreichen. Der Neufelder See ist ein beliebter Badesee im Großraum Wien. Am Südufer befindet sich das gut besuchte Strandbad, das die Gemeinde Neufeld an der Leitha betreibt sowie Gastronomie und ein Treffpunkt für zahlreiche Tauchschulen. Der See befindet sich im Besitz der Familie Esterházy. Sie finden hier ein absolutes Erholungsgebiet vor - Ihr Paradies! Zum Ferienhaus Ihr Auto und die Fahrzeuge der Gäste parken Sie bequem direkt vor dem Ferienhaus. Bereits beim Ankommen empfängt Sie ein überschaubarer, sonniger Vorgarten , der sich ganz nach Ihren Wünschen gestalten lässt – ob mit blühenden Rosen, duftenden Kräutern, dekorativen Sträuchern oder einer gemütlichen Sitzbank zum Entspannen. Das Haus verfügt über fünf Zimmer , eine begehbare Garderobe , ein Wohn- Esszimmer , eine Küche , ein Badezimmer sowie eine separate Toilette . Das Vorzimmer bietet ausreichend Platz, um anzukommen und durchzuatmen. Es bietet praktischen Stauraum und verbindet zudem die einzelnen Wohnbereiche miteinander: Eine helle Einbauküche , die mit allen notwendigen Geräten ausgestattet ist und sich dank des Fensters auch gut lüften lässt. Ein Tageslichtbadezimmer, das ist mit einer Dusche , einem großzügigen Waschbecken samt Ober- und Unterschrank sowie einem Waschmaschinenanschluss ausgestattet ist. Eine Toilette steht separat zur Verfügung. Das Wohn- und Esszimmer bildet den zentralen Treffpunkt des Hauses und lädt zum Verweilen ein. Ein Ofen sorgt in der kühleren Jahreszeit für behagliche Wärme und eine gemütliche Atmosphäre. Zwei annähernd gleichgroße Zimmer und zwei weitere große Zimmer bieten sich ganz nach Bedarf zur vielfältigen Nutzung an: Etwa als Schlaf-, Kinder- oder Gästezimmer, Home-Office oder Hobby-Raum. In den Wohn- und Schlafräumen wurden Laminatböden verlegt, während Küche, Badezimmer und Sanitärbereiche mit pflegeleichten Fliesen ausgestattet sind. Das Haus eröffnet Raum für zahlreiche persönliche Gestaltungsideen sowie mögliche Modernisierungsmaßnahmen nach eigenen Vorstellungen. Für behagliche Wärme an kalten Tagen sorgen eine Gastherme, die im angrenzenden Abstellraum untergebracht ist sowie ein gemütlicher Schwedenofen, und auch im Sommer bleibt das Haus dank eines Klimagerätes angenehm kühl. Öffnen Sie die Türe und genießen Sie den Blick in den weitläufigen Garten . Hier können Sie die besondere Atmosphäre der Seenlandschaft hautnah erleben. Es stehen ein gemauerter Grill und ein Brunnen zur Wasserentnahme zur Verfügung. Ein Rasenmäher-Traktor sowie weitere Gartengeräte sind bereits vorhanden und erleichtern die Gartenpflege. Vom See trennen Sie nur ca. 700m – er ist über einen privaten Badeweg exklusiv für die Anrainer erreichbar. Der liebevoll angelegte Sandspielplatz mit Seeblick schafft einen besonderen Treffpunkt für Groß und Klein. Am Steg eröffnet sich die ganze Schönheit der Umgebung – ein Ort, an dem Entschleunigung und Lebensqualität spürbar werden. Zur Lage Der Neufelder See ist ein nahe zu Wien gelegener und bekannter Badesee sowie ein beliebter Treffpunkt für Sporttaucher oder solche, die es noch werden wollen. Der See liegt südlich der Bundeshauptstadt an der Grenze zu Niederösterreich und Burgenland . Der See wird ausschließlich durch Grundwasserquellen (und Niederschlag) gespeist und hat einen natürlichen Abfluss, wodurch sich das Wasser automatisch reinigt und erneuert . An seiner tiefsten Stelle ist der Neufelder See etwa 24 Meter tief. Das Gewässer verfügt über beste Qualität und ist auch deshalb ein Highlight nicht nur für Genießer, sondern auch für Wassersportler aller Art: Schwimmen, Surfen, Segeln, Paddeln und Tauchen nach Lust und Laune! In der näheren Umgebung von Wien ist der Neufelder See das einzig allgemein betauchbare Gewässer. Zahlreiche Tauchschulen halten daher ihre Freiwasserlektionen ab. Es bestehen zwei Tauchbasen , eine im öffentlichen Strandbad , die andere gegenüber im Westen des Sees auf dem Gelände der Naturfreunde . Seit 1988 wird auch hier im Juni mit dem Neufelder Triathlon eine der ältesten österreichischen Triathlon-Sportveranstaltungen ausgetragen. Viele weitere Events wie etwa das See-Opening , der Businessrun , die Weintage am Neufelder See, das Seefest , das ORF-Burgenland Sommerfest oder der Advent am Neufelder See sorgen für viel Abwechslung und Vergnügen rund um den See. Restaurants und Hotels mit tollem Panoramablick und allen Annehmlichkeiten versorgen Sie mit köstlichen Gerichten und coolen Drinks. Mit dem Autobahnanschluss A3 über die Abfahrt Hornstein gelangen Sie rasch beispielsweise von der Bundeshauptstadt Wien bis zur Liegenschaft, wo Sie bequem vor dem Haus oder in der Einfahrt neben dem Haus parken. Nach Eisenstadt benötigen Sie circa 15 Minuten mit dem Auto, Wiener Neustadt und Wien sind in rund 30 Minuten zu erreichen. Öffentliche Verkehrsmittel stehen Ihnen ebenso zur Verfügung: der Bahnhof Neufeld a.d. Leitha ist in etwa 2,8 km von der Liegenschaft zum Beispiel auch gut mit dem Fahrrad zu erreichen. Bei der Bushaltestelle 'Strandbad' in der Nähe des Seeeingangs verkehren die Busse der Wiener Neustädter Stadtwerke. In den umliegenden Gemeinden Hornstein und Neufeld an der Leitha finden Sie zahlreiche Einkaufsmöglichkeiten, Gastronomiebetriebe, Heurigen, Tankstellen, Trafiken, Banken, Apotheken, Ärzte, Schulen und Kindergärten vor. Zu den Kosten: Zu den Kosten: Kaufpreis für das Einfamilienhaus - Superädifikat: EUR 100.000,00 Miete 2025 – 2035 : EUR 7.591,-- / Jahr (wertgesichert nach dem VPI 2020) Betriebskosten 2025 : EUR 387,05 (jährlich) Errichtungsgebühr : EUR 850,-- (einmalig zu entrichten) Vergebührung : EUR 806,30 (einmalig zu entrichten) Weitergabe-Mietvertrag mit Vormietrecht auf weitere 10 Jahre – Miethöhe 2035-2045 : EUR 8.350,- / Jahr (wertgesichert nach dem VPI 2020) Sonstiges Die Liegenschaft kann nach Treuhandabwicklung sofort übernommen werden. Rechtliche Info Als Immobilienmakler sind wir einerseits Ihnen als Interessent, als auch dem Abgeber als Verkäufer bzw. Vermieter verpflichtet. Wir sind einerseits gegenüber dem Abgeber, als auch gegenüber Behörden verpflichtet bei Ungereimtheiten Auskunft geben zu können, an welche Personen Immobilien angeboten wurden. Auch die europäischen Verbraucherrechte wurden vereinheitlicht, somit wird seit 13. Juni 2014 ebenso mit Ihnen als Interessent ein schriftlicher Maklervertrag abgeschlossen (früher geschah dies mündlich &amp; es entfällt das Ausfüllen von \"Besichtigungsscheinen\"). Der Verband der Österreichischen Immobilienwirtschaft hat hierzu ebenso eine detaillierte Informationsseite Wir benötigen daher, um Ihnen detaillierte Unterlagen zukommen zu lassen, Ihren Namen und Ihre Wohnadresse","la":47.87073051,"lo":16.39930152,"pb":0},{"h":"Modernes Doppelhaus mit Garten und Terrasse auf Eigengrund &amp; zeitgemäßem Wohnkomfort","u":"https://www.immobilienscout24.at/expose/6a667ed1805cb4960a92b11b","p":389000,"pt":"389.000 €","m":57,"z":"2491","o":"Neufeld an der Leitha","a":"","g":"Wertimmobilien Consulting KG","k":1,"r":4,"f":116.0,"ppm":"","ty":"HOUSE","fr":[],"frm":"","bi":["https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.0012000001E83y8-1785849504-7c6db1f34e5747339103e76f3fbf04e8"],"t":"Modernes Doppelhaus mit Garten und Terrasse auf Eigengrund &amp; zeitgemäßem Wohnkomfort • Absolut ruhige Wohngegend - Die Autobahn A3 ist nur wenige Kilometer entfernt Stilvoll wohnen – großzügig, modern und bestens gelegen Dieses moderne Objekt steht für zeitgemäßes Wohnen in einer attraktiven Wohnlage. Die Immobilie überzeugt durch eine durchdachte Raumaufteilung, helle Wohnbereiche sowie einen privaten Garten mit großzügiger Terrasse, die zusätzlichen Lebensraum im Freien schafft. Ob als Zuhause für Familien, gemütlicher Rückzugsort für Paare oder modernes Eigenheim für Eigennutzer – dieses Objekt zeigt die vielfältigen Möglichkeiten einer zeitgemäßen Wohnimmobilie. Raumaufteilung Erdgeschoss Freundlicher Eingangsbereich Großzügiger Wohn- und Essbereich mit Zugang zur Terrasse Küche Gäste-WC Praktischer Abstellraum Technikraum Obergeschoss Drei helle Schlafzimmer Zentraler Flurbereich Badezimmer mit WC Zusätzliche Nutzungsmöglichkeiten für Familie, Homeoffice oder Gäste Dachgeschoss Dachbodenbereich als zusätzlicher Stauraum Optionale Nutzungsmöglichkeiten Ausstattung Das Objekt beinhaltet folgende Ausstattungsmerkmale: Großzügige Terrasse mit angrenzendem Gartenbereich Moderne Fenster mit Mehrfachverglasung Elektrische Raffstores bzw. Außenbeschattung Hochwertige Hauseingangstür Energieeffiziente Wärmedämmfassade Modernes Dachsystem Vorbereitung für zeitgemäße Haustechnik Funktionaler Technikraum Eigene PKW-Stellplätze Moderne und nachhaltige Bauweise Die Immobilie ist in belagsfertiger Ausführung: Fertiger Estrich Vorbereitung für ein modernes Heizsystem Vorbereitung Fußbodenheizung Elektroinstallationen vorbereitet Sanitärinstallationen vorbereitet Fertiggestellte Fassade Komplettes Dachsystem Montierte Fenster und Außentüren Eingezäunter Gartenbereich Begrünte Außenflächen Fertiggestellte Stellplätze Lage Das Objekt befindet sich in einer attraktiven Wohnlage mit guter Infrastruktur und hoher Lebensqualität. In unmittelbarer Umgebung befinden sich unter anderem: Einkaufsmöglichkeiten für den täglichen Bedarf Öffentliche Verkehrsanbindungen Schulen und Kindergärten Restaurants, Cafés und Nahversorger Grünflächen und Erholungsgebiete Neufelder See Freizeit- und Sportangebote Gute Anbindung an wichtige Verkehrswege Kaufpreis € 389.000,-- Weitere Details sind auf Anfrage gerne erhältlich. Wir weisen darauf hin, dass ein wirtschaftliches Naheverhältnis zum Verkäufer besteht. Wir weisen darauf hin, dass zwischen dem Vermittler und dem zu vermittelnden Dritten ein familiäres oder wirtschaftliches Naheverhältnis besteht. Der Vermittler ist als Doppelmakler tätig. Infrastruktur / Entfernungen Gesundheit Arzt &lt;500m Apotheke &lt;500m Klinik &lt;5.500m Kinder &amp; Schulen Kindergarten &lt;1.500m Schule &lt;500m Nahversorgung Supermarkt &lt;500m Bäckerei &lt;500m Sonstige Bank &lt;500m Geldautomat &lt;500m Post &lt;500m Polizei &lt;500m Verkehr Bus &lt;500m Bahnhof &lt;500m Autobahnanschluss &lt;3.500m Flughafen &lt;9.500m Angaben Entfernung Luftlinie / Quelle: OpenStreetMap","la":47.87029028,"lo":16.382635,"pb":0},{"h":"Entzückender Bungalow mit 2 Garagen","u":"https://www.immobilienscout24.at/expose/6a5f5615ea61a7e6c5f6a49c","p":299000,"pt":"299.000 €","m":58,"z":"7051","o":"Großhöflein","a":"","g":"RE/MAX P&I in Neusiedl am See","k":1,"r":4,"f":110.0,"ppm":"","ty":"HOUSE","fr":[],"frm":"","bi":["https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.0012000001E83lJ-1776096505-ce4381000e3c4e2a9d11c25d56dbf510"],"t":"Entzückender Bungalow mit 2 Garagen Dieser entzückende Bungalow in unmittelbarer Nachbarschaft von Eisenstadt überzeugt durch seinen besonderen Charme, großzügige Raumaufteilung und vielfältige Nutzungsmöglichkeiten. Mit einer Wohnfläche von ca. 110 m² bietet das Haus ausreichend Wohnraum. Das Objekt ist voll unterkellert, wodurch reichlich Stauraum sowie Platz für Hobby, Fitness oder Wellness geschaffen wird. Zusätzlich verfügt der Keller über einen Autoabstellplatz, der direkten Zugang zum Haus ermöglicht. Der ausbaubare Dachboden eröffnet weiteres Potenzial – sei es als zusätzlicher Wohnraum, Atelier oder Büro. Ein gemütlicher Bungalow, der durch seine Kombination aus gemütlichem Wohnkomfort, Ausbaupotenzial, idyllischem Grundstück und erstklassiger Lage überzeugt. Perfekt für alle, die Wohnen im Grünen mit urbaner Nähe verbinden wollen. Das großzügige Grundstück bietet einige Annehmlichkeiten: Freistehende große Garage - ideal auch für Bastler oder als zusätzliche Lagerfläche. Baugrund - mit Potenzial für Erweiterung oder zusätzliche Bebauung, Ausblick über die umliegende Landschaft Ideale Verkehrsanbindung – ob Auto, Bus oder Bahn Hier genießen Sie Naturverbundenheit und gleichzeitig kurze Wege in die Stadt. Distanzen: Apotheke: ca. 3km Arzt: ca. 300m Kindergarten : ca. 600m Volksschule: ca.600m Bank: ca. 2,7km Bus: ca. 120m Zug: ca. 1,7km Lage: Der Bungalow befindet sich in Großhöflein, einer beliebten Wohngemeinde mit ausgezeichneter Infrastruktur. Die Nähe zur Landeshauptstadt Eisenstadt (nur 2 Minuten entfernt) garantiert beste Anbindung an Schulen, Einkaufsmöglichkeiten, Kultur- und Freizeitangebote. Auch Wien ist durch die Autobahn schnell erreichbar. Großhöflein ist eine charmante Gemeinde im Burgenland, bekannt für ihre idyllische Lage und hohe Lebensqualität. Sie liegt westlich von Eisenstadt und bietet eine ideale Mischung aus ländlichem Flair und moderner Infrastruktur. Die Gemeinde ist von Weinbergen umgeben, was sie besonders für Weinliebhaber attraktiv macht. Mit einer reichen Geschichte und kulturellen Highlights bietet Großhöflein zudem interessante Sehenswürdigkeiten, wie die Pfarrkirche St. Georg, die mit ihrem historischen Charakter beeindruckt. Darüber hinaus sorgen zahlreiche Vereine und Veranstaltungen für ein lebendiges Gemeinschaftsleben. Die Lage in der Nähe der Landeshauptstadt Eisenstadt ermöglicht schnelle Verbindungen zu urbanen Zentren, während die Nähe zur Natur Ruhe und Entspannung garantiert. Großhöflein ist ein idealer Ort für Familien, Pendler oder Menschen, die das Leben im Grünen genießen möchten. Die Angaben zum Objekt basieren auf uns zur Verfügung gestellten Informationen. Eine Haftung unsererseits ist hierfür ausgeschlossen. Detailfragen werden im Zuge von Besichtigungen besprochen, geklärt oder nachgereicht. Beim angegebenen Preis handelt es sich um einen Richtpreis. Der tatsächliche Kaufpreis kann über oder unter diesem Kaufpreis liegen. Ich behalte mir das Recht vor, bei entsprechender Nachfrage den Verkauf über ein digitales Angebotsverfahren abzuwickeln. Wir bitten Sie um Verständnis, dass wir aufgrund der Nachweispflicht gegenüber dem Eigentümer nur Anfragen mit vollständiger Angabe der Anschrift bearbeiten können. Der Interessent wird auf die erweiterten Richtlinien des Konsumentenschutzes im Sinne des FAGG hingewiesen.erreichbar.möchten. Infrastruktur / Entfernungen Gesundheit Arzt &lt;1.500m Apotheke &lt;3.000m Klinik &lt;6.000m Krankenhaus &lt;3.000m Kinder &amp; Schulen Schule &lt;2.000m Kindergarten &lt;1.500m Universität &lt;3.500m Höhere Schule &lt;4.500m Nahversorgung Supermarkt &lt;1.000m Bäckerei &lt;2.000m Einkaufszentrum &lt;4.000m Sonstige Bank &lt;2.000m Geldautomat &lt;3.500m Post &lt;500m Polizei &lt;3.500m Verkehr Bus &lt;500m Autobahnanschluss &lt;2.000m Bahnhof &lt;1.500m Angaben Entfernung Luftlinie / Quelle: OpenStreetMap","la":47.83045097,"lo":16.47711382,"pb":0},{"h":"Einziehen statt endlos bauen – dein smarter Neubau‑Deal – Schlüsselfertig zum belagsfertigen Preis!","u":"https://www.immobilienscout24.at/expose/69eb4db8826d011b5c3d72d4","p":399000,"pt":"399.000 €","m":59,"z":"7035","o":"Steinbrunn","a":"","g":"MY-MAKLER - GS Immobilien GmbH","k":1,"r":4,"f":96.25,"ppm":"","ty":"HOUSE","fr":[],"frm":"","bi":["https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.0012000001OuIuu-1769461698-4f99cd95776f4fed83a5d7e0a2d52320"],"t":"Einziehen statt endlos bauen – dein smarter Neubau‑Deal – Schlüsselfertig zum belagsfertigen Preis! Willkommen in Ihrem zukünftigen Lieblingsort – einem modernen Einfamilienhaus in einer der begehrtesten und zugleich ruhigsten Wohnlagen. Hier trifft zeitgemäßes Design auf entspannten Lifestyle. Baustart jetzt, Einzug 2027 – perfekt für alle, die sich frühzeitig ihr Traumzuhause sichern möchten und Wert auf Qualität, Komfort und smarte Planung legen. Auf 96,25 m² erwartet Sie ein clever durchdachtes Wohnkonzept, das Raum für alles bietet, was das Leben ausmacht. Vier helle, flexibel nutzbare Zimmer schaffen Platz für Familie, Homeoffice, Hobbys oder einfach mehr Freiraum – ganz so, wie es zu Ihrem Alltag passt. Die 17,31 m² große Terrasse wird schnell zum Lieblingsplatz für sonnige Frühstücke oder entspannte Abende. Und der Garten mit 159,29 m² eröffnet unzählige Möglichkeiten: Spielbereich, Outdoor-Lounge, Gemüsegarten oder minimalistisches Grün – Sie entscheiden. Die ruhige Umgebung und die angenehme Nachbarschaft sorgen für ein Wohngefühl, das man nicht erklären muss – man spürt es. Und das Beste: Der Grundriss ist flexibel anpassbar. Wenn Sie eigene Ideen einbringen möchten, wird das Haus einfach nach Ihren Wünschen gestaltet. Exklusiv bis 28.06.2026: Sie erhalten das Haus schlüsselfertig – zum Preis eines belagsfertigen Hauses. Ein Angebot, das man nicht zweimal bekommt. Für alle weiteren Infos stehen wir jederzeit bereit – Ihr neues Zuhause wartet bereits. Wir weisen darauf hin, dass zwischen dem Vermittler und dem zu vermittelnden Dritten ein familiäres oder wirtschaftliches Naheverhältnis besteht. Der Vermittler ist als Doppelmakler tätig. Infrastruktur / Entfernungen Gesundheit Arzt &lt;500m Apotheke &lt;4.500m Klinik &lt;6.000m Krankenhaus &lt;8.500m Kinder &amp; Schulen Schule &lt;1.000m Kindergarten &lt;2.500m Universität &lt;8.500m Höhere Schule &lt;10.000m Nahversorgung Supermarkt &lt;1.500m Bäckerei &lt;2.500m Einkaufszentrum &lt;9.000m Sonstige Bank &lt;1.000m Geldautomat &lt;1.000m Post &lt;500m Polizei &lt;4.500m Verkehr Bus &lt;500m Autobahnanschluss &lt;3.500m Bahnhof &lt;4.000m Angaben Entfernung Luftlinie / Quelle: OpenStreetMap","la":47.8419363,"lo":16.39808045,"pb":0},{"h":"TRADITIONELLER STRECKHOF MIT GARTEN, SCHEUNE UND ZWEITER ZUFAHRT - BAURESERVE","u":"https://www.immobilienscout24.at/expose/6a7ea1f5afe6ae3fc97e0f15","p":275000,"pt":"275.000 €","m":59,"z":"7051","o":"Großhöflein","a":"","g":"BETTERHOMES Real GmbH","k":1,"r":5,"f":100.0,"ppm":"","ty":"HOUSE","fr":[],"frm":"","bi":["https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.0012000001E3r9F-d060a5b48eb243d9956e231d5addf4f4"],"t":"TRADITIONELLER STRECKHOF MIT GARTEN, SCHEUNE UND ZWEITER ZUFAHRT - BAURESERVE An der Ostseite des Leithagebirges gelegen, bereits verwöhnt vom milden Weinbauklima, bietet sich hier eine breite Palette von Sport- und Freizeitmöglichkeiten, von Radtouren im Leithagebirge, über Vollmondwanderungen bis zu geselligen Abenden mit den kulinarischen Genüssen der regionalen Winzer. Nur wenige Autominuten nach Eisenstadt oder auf die A3 Richtung Wien. Der traditionelle Streckhof in Großhöflein bietet mit seinen vielfältigen Wohneinheiten und historischen Details wie einem Presshaus aus dem Jahr 1779 und einem Weinkeller ein einzigartiges Wohngefühl. Im uneinsichtigen Garten und der geräumigen Scheune mit zweiter Zufahrt können Sie Ihre Ideen frei entfalten. Ideal für Familien, die das Landleben in vollen Zügen genießen möchten. Dieses BETTERHOMES-Angebot zeichnet sich durch folgende Vorteile aus: • mehrere Wohneinheiten möglich • 1. Einheit ebenerdig: Vorraum Kreugewölbe, Bad, Küche, Wohnzimmer und Schlafzimmer • Presshaus mit Presse aus 1779 und Weinkeller • 2. Einheit Erdgeschoss: Zimmer mit Gewölbe und ehemaliger Stall • 2. Einheit Obergeschoss: Zimmer mit original Fensterläden und ehemaliger Heuboden • uneinsichtiger Garten und überdachter Stellplatz • geräumiger Stadel/Scheune mit 2. Zufahrt • weiteres Einfamilienhaus möglich auf dem Platz der Scheune • geeignet für mehrere Generationen - oder Wohnen und Arbeiten unter einem Dach • gut zu wissen: die Kosten für die Übernahme von Abbruchmaterial auf der Deponie übernimmt die Gemeinde • und, und, und... Interessiert? Kontaktieren Sie uns für eine unverbindliche Besichtigung – auch Online-Besichtigung möglich! Nichts Passendes gefunden? Über 200 weitere Angebote unter: www.betterhomes.at - der Immobilienfairmittler® Selber eine Immobilie zu vermarkten? Profitieren Sie von unserem Know-how: https://www.betterhomes.at/de/profitieren Sie möchten eine Immobilie schätzen lassen? Erfahren Sie jetzt ihren Wert über unsere Gratis-Schätzung, sofort und unverbindlich! https://www.betterhomes.at/de/knowledge/estimation *** Der Eigentümer wurde aufgefordert, den Energieausweis vorzulegen. ***","la":47.83061,"lo":16.44937,"pb":0}];
+DATA.forEach((r, i) => { r._i = i; });
+const fmt = n => n.toLocaleString("de-DE", {maximumFractionDigits: 0});
+const state = {q: [], mode: "alle", rooms: 0, pmin: null, pmax: null, tmax: 99, sort: "n"};
+
+function chips(id, feld, alsZahl) {
+  const box = document.getElementById(id);
+  box.addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    [...box.querySelectorAll("button")].forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    state[feld] = alsZahl ? +b.dataset.v : b.dataset.v;
+    render();
+  });
+}
+chips("f-mode", "mode", false);
+chips("f-rooms", "rooms", true);
+document.getElementById("q").addEventListener("input", e => {
+  state.q = e.target.value.toLowerCase().split(/\s+/).filter(Boolean);
+  render();
+});
+for (const id of ["pmin", "pmax"]) {
+  document.getElementById(id).addEventListener("input", e => {
+    state[id] = e.target.value === "" ? null : +e.target.value;
+    render();
+  });
+}
+document.getElementById("tmax").addEventListener("change", e => { state.tmax = +e.target.value; render(); });
+document.getElementById("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
+
+function passt(r) {
+  if (state.mode === "kauf" && !r.k) return false;
+  if (state.mode === "miete" && r.k) return false;
+  if (r.r < state.rooms) return false;
+  if (r.m > state.tmax) return false;
+  // Objekte ohne Preis bleiben sichtbar — "auf Anfrage" heisst nicht "zu teuer".
+  if (r.p !== null) {
+    if (state.pmin !== null && r.p < state.pmin) return false;
+    if (state.pmax !== null && r.p > state.pmax) return false;
+  }
+  if (state.q.length) {
+    const heu = (r.h + " " + r.o + " " + r.z + " " + r.a + " " + r.t).toLowerCase();
+    if (!state.q.every(w => heu.includes(w))) return false;
+  }
+  return true;
+}
+
+// Wann willhaben das Inserat zuletzt hochgestuft hat (PUBLISHED). Das ist
+// nicht der Erstonline-Tag: Makler stufen Inserate regelmaessig neu hoch.
+// Ohne Datum bleibt die Angabe leer, statt ein Alter zu behaupten.
+function alterText(r) {
+  if (!r.pb) return "";
+  const tage = Math.floor((Date.now() - r.pb) / 86400000);
+  if (tage <= 0) return "heute aktualisiert";
+  if (tage === 1) return "gestern aktualisiert";
+  if (tage < 31) return `vor ${tage} Tagen aktualisiert`;
+  const monate = Math.round(tage / 30.4);
+  return `vor ${monate} Monat${monate === 1 ? "" : "en"} aktualisiert`;
+}
+
+function karte(r) {
+  const preis = r.p === null ? "auf Anfrage" : fmt(r.p) + " €";
+  const ppm = r.ppm || ((r.p && r.f && r.k) ? "€ " + fmt(r.p / r.f) + "/m²" : "");
+  const bild = r.bi.length
+    ? `<img src="${r.bi[0]}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">`
+    : `<div class="k-ohne">kein Bild</div>`;
+  const fakten = [
+    r.r ? r.r + " Zimmer" : "",
+    r.f ? Math.round(r.f) + " m²" : "",
+    ppm,
+    r.ty,
+  ].filter(Boolean).map(t => `<span>${t}</span>`).join("");
+  return `<article class="karte" data-idx="${r._i}" tabindex="0" role="button">
+    <div class="k-bild">${bild}
+      <span class="k-zeit">${r.m} Min</span>
+      <span class="k-art">${r.k ? "Kauf" : "Miete"}</span>
+      ${r.bi.length > 1 ? `<span class="k-anz">${r.bi.length} Bilder</span>` : ""}
+    </div>
+    <div class="k-koerper">
+      <div class="k-preis">${preis}${r.k ? "" : ' <small>/ Monat</small>'}</div>
+      <div class="k-fakten">${fakten}</div>
+      <p class="k-titel"><a href="${r.u}" target="_blank" rel="noopener">${r.h}</a></p>
+      <p class="k-ort">${r.o || r.z} · ${r.z}${alterText(r) ? ` · ${alterText(r)}` : ""}</p>
+    </div>
+  </article>`;
+}
+
+// Nicht alle Karten auf einmal: das Telefon soll nicht minutenlang malen.
+const STAPEL = 48;
+let gefiltert = [];
+let gezeigt = 0;
+
+function nachlegen() {
+  const teil = gefiltert.slice(gezeigt, gezeigt + STAPEL);
+  document.getElementById("liste").insertAdjacentHTML("beforeend", teil.map(karte).join(""));
+  gezeigt += teil.length;
+  const knopf = document.getElementById("mehr");
+  const offen = gefiltert.length - gezeigt;
+  knopf.hidden = offen <= 0;
+  knopf.textContent = offen > 0 ? `Weitere ${Math.min(STAPEL, offen)} von ${offen} anzeigen` : "";
+}
+
+function render() {
+  gefiltert = DATA.filter(passt);
+  const s = state.sort;
+  // Objekte ohne Datum (pb = 0) rutschen ans Ende, statt als frisch zu gelten.
+  if (s === "n")   gefiltert.sort((a, b) => (b.pb || 0) - (a.pb || 0) || a.m - b.m);
+  if (s === "m")   gefiltert.sort((a, b) => a.m - b.m || (a.p || 9e12) - (b.p || 9e12));
+  if (s === "p")   gefiltert.sort((a, b) => (a.p === null ? 9e12 : a.p) - (b.p === null ? 9e12 : b.p));
+  if (s === "pd")  gefiltert.sort((a, b) => (b.p || 0) - (a.p || 0));
+  if (s === "f")   gefiltert.sort((a, b) => (b.f || 0) - (a.f || 0));
+  if (s === "ppm") gefiltert.sort((a, b) => ((a.p && a.f) ? a.p / a.f : 9e9) - ((b.p && b.f) ? b.p / b.f : 9e9));
+  document.getElementById("liste").innerHTML = "";
+  gezeigt = 0;
+  nachlegen();
+  document.getElementById("leer").hidden = gefiltert.length > 0;
+  document.getElementById("zaehler").innerHTML = "<b>" + gefiltert.length + "</b> von " + DATA.length;
+}
+document.getElementById("mehr").addEventListener("click", nachlegen);
+
+const werkzeug = document.getElementById("werkzeug");
+const wzAuf = document.getElementById("wz-auf");
+wzAuf.addEventListener("click", () => {
+  const offen = werkzeug.classList.toggle("offen");
+  wzAuf.setAttribute("aria-expanded", String(offen));
+});
+
+// --- Detailfenster ---
+const modal = document.getElementById("modal");
+const mInhalt = document.getElementById("m-inhalt");
+let zuletztFokus = null;
+
+function modalAuf(r) {
+  const maps = "https://www.google.com/maps/search/?api=1&query=" + r.la + "," + r.lo;
+  const ppm = r.ppm || ((r.p && r.f && r.k) ? "€ " + fmt(r.p / r.f) + "/m²" : "");
+  const zahl = (t, w) => w ? `<div><dt>${t}</dt><dd>${w}</dd></div>` : "";
+  mInhalt.innerHTML = `
+    <h2 class="m-kopf" id="m-titel">${r.h}</h2>
+    <p class="m-adr">${r.a ? r.a + ", " : ""}${r.z} ${r.o} · ${r.g}</p>
+    ${r.bi.length ? `<div class="m-galerie">${r.bi.map(b =>
+        `<img src="${b}" alt="" loading="lazy" referrerpolicy="no-referrer">`).join("")}</div>` : ""}
+    <dl class="m-zahlen">
+      ${zahl("Preis", r.pt + (r.k ? "" : " / Monat"))}
+      ${zahl("Fahrzeit (max)", r.m + " Min")}
+      ${zahl("Zimmer", r.r || "k. A.")}
+      ${zahl("Fläche", r.f ? fmt(r.f) + " m²" : "")}
+      ${zahl("Pro m²", ppm)}
+      ${zahl("Art", r.ty)}
+      ${zahl("Freifläche", r.fr && r.fr.length ? r.fr.join(", ") : "")}
+      ${zahl("davon m²", r.frm)}
+    </dl>
+    <p class="m-text">${r.t || "Keine Beschreibung erfasst."}</p>
+    <div class="m-fuss">
+      <a class="stark" href="${r.u}" target="_blank" rel="noopener">Inserat auf willhaben</a>
+      <a href="${maps}" target="_blank" rel="noopener">Lage auf der Karte</a>
+    </div>`;
+  modal.hidden = false;
+  document.body.style.overflow = "hidden";
+  modal.querySelector(".modal-zu").focus();
+}
+
+function modalZu() {
+  modal.hidden = true;
+  document.body.style.overflow = "";
+  if (zuletztFokus) zuletztFokus.focus();
+}
+
+modal.addEventListener("click", e => { if (e.target.closest("[data-schliessen]")) modalZu(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !modal.hidden) modalZu(); });
+
+const liste = document.getElementById("liste");
+function kartenKlick(e) {
+  if (e.target.closest("a")) return;          // Links behalten ihre Funktion
+  const k = e.target.closest(".karte");
+  if (!k) return;
+  zuletztFokus = k;
+  modalAuf(DATA[+k.dataset.idx]);
+}
+liste.addEventListener("click", kartenKlick);
+liste.addEventListener("keydown", e => {
+  if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("karte")) {
+    e.preventDefault();
+    kartenKlick(e);
+  }
+});
+
+render();
+</script>
+</body>
+</html>
